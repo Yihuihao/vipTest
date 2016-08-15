@@ -11,18 +11,33 @@ MoreTabView.prototype.load = function(){
 	
 	TabView.prototype.load.call(this);
 	
+	
 	//获取“更多”按钮的右边距窗口的距离
 	var moreRight = document.querySelector('.more-show').getBoundingClientRect().right;
-	var left = moreRight - ('.more-modal').innerWidth() + 'px';
+	var left = moreRight - $('.more-modal').innerWidth() + 'px';
 	
 	$('.more-modal').show().css({
 		left:left
+	}).hover(function(){
+		$(this).show();
+	},function(){
+		$(this).hide();
 	});
 	
+	
+	
+	$('.more-modal li').hover(function(){
+		
+		$(this).find('p').stop().animate({
+			top:0
+		},300);
+	},function(){
+		$(this).find('p').stop().animate({
+			top:'25%'
+		},200);
+	});
 }
-
 MoreTabView.prototype.unload = function(){
-	TabView.prototype.unload.call(this);
 	
 	$('.more-modal').hide();
 }
