@@ -14,6 +14,8 @@ function TabControl(){
 	
 	this.locTabView = new LocationTabView();
 	
+	this.moreTabView = new MoreTabView();
+	
 	this.control();
 }
 
@@ -26,4 +28,14 @@ TabControl.prototype.control = function(){
 		
 		//bind(this)
 	}.bind(this));
+	
+	$('.more-show').hover(function(){
+		this.moreTabView.load();
+		
+	}.bine(this),function(){
+		
+		this.moreTabView.unload();
+		
+	}.bind(this));
+	
 }

@@ -19,3 +19,5 @@ TabView.prototype.checkDatas = function(index){
 		return locationDatas;
 	}
 }
+
+TabView.prototype.unload = function(){};

@@ -26,9 +26,25 @@ LocationTabView.prototype.load = function(index){
 	
 	console.log(left+'|||' + top);
 	
+	/*
+	//监听窗口变换
+	$(window).resize(function(){
+//		alert('xxxx');
+		
+		left = locationDiv.getBoundingClientRect().left + 'px';
+		top =locationDiv.getBoundingClientRect().bottom + 'px';
+	
+		
+	})
+	*/
+	
+	
 	if(this.$tab){
 		
-		this.$tab.show();
+		this.$tab.show().css({
+			left:left,
+			top:top
+		});
 		return;
 	}
 	
@@ -38,10 +54,10 @@ LocationTabView.prototype.load = function(index){
 		border:'1px solid silver',
 		backgroundColor:'#fff',
 		position:'absolute',
-//		left:left,
-//		top:top
-		left:'100px',
-		top:'30px'
+		left:left,
+		top:top
+//		left:'100px',
+//		top:'30px'
 	}).appendTo($('body')).append($("<ul class='cityList'>").css({
 		listStyleType:'none',
 //		padding:0

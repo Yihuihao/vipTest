@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基本变量和引用变量</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			var a = 10;
+			var b = a;
+			
+			console.log('1a:' + a +'||||' + 'b:' + b);
+			//一旦执行过后，b的值就通过a指向了10，即将10 赋值给b
+			
+			//即使a重新赋值，b的值也不会自动随a而变，
+			a = 20;
+			
+			console.log('2a:' + a +'||||' + 'b:' + b);
+			
+		</script>
+	</body>
+</html>
